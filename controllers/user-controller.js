@@ -1,4 +1,4 @@
-import people from './users.js';
+import people from '../users/users.js';
 let users = people;
 
 const userController = (app) => {
