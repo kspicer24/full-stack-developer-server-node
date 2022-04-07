@@ -14,8 +14,7 @@ const findAllTuits = (req, res) =>
 
 const updateTuit = (req, res) => {
     const tuitdIdToUpdate = req.params.tid;
-    const tuitToUpdate = tuits.find(t => t.id === tuitdIdToUpdate);
-    tuitToUpdate.tuit = req.body;
+    const tuitToUpdate = req.body;
     tuits = tuits.map(t => t._id === tuitdIdToUpdate ? tuitToUpdate : t);
     res.sendStatus(200);
 }
