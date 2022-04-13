@@ -8,14 +8,14 @@ const createTuit = async (req, res) => {
 }
 
 const findAllTuits = async (req, res) => {
-    const tuits = findAllTuitsDao();
+    const tuits = await findAllTuitsDao();
     res.json(tuits);
 }
 
 const updateTuit = async (req, res) => {
     const tuitdIdToUpdate = req.params.tid;
     const tuitToUpdate = req.body;
-    const status = updateTuitDao(tuitdIdToUpdate, tuitToUpdate);
+    const status = await updateTuitDao(tuitdIdToUpdate, tuitToUpdate);
     res.send(status);
 }
 
